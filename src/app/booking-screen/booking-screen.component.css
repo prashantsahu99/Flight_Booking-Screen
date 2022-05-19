@@ -1,0 +1,37 @@
+.container-fluid{
+    background-color: rgba(225,231,238,255);
+}
+.navbar :hover{
+    color:rgba(39,122,227,255);
+}
+.logo{
+    width: 40px;
+    height: 35px;
+}
+.main{
+    font-size: small;
+    margin-top: 1%;
+}
+.location{
+    color:rgba(161,156,166,255);
+}
+.btn{
+    font-size: 15px;
+    font-weight: 500;
+    color:white;
+    background-color: rgba(243,118,56,255);
+    margin-left: 20px;
+    padding: 5px;
+}
+.money{
+    text-align: right;
+    font-style: normal;
+}
+.flightdetail{
+    text-align: center;
+    color: rgba(39,122,227,255);
+    font-weight: bold;
+}
+.refund{
+    color: rgb(130,140,151);
+}

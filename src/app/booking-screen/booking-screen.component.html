@@ -1,0 +1,37 @@
+<div class="container-fluid border">
+    <div class="fw-bold">Sort By</div>
+    <div class="navbar border rounded h6 bg-white text-uppercase justify-content-around mb-2">
+        <span type="button" (click)="sortByDeparture()">Departure</span>
+        <span type="button" (click)="sortByDuration()">Duration</span>
+        <span type="button" (click)="sortByArrival()">Arrival</span>
+        <span type="button" (click)="sortByPrice()">Price <i class="fa fa-long-arrow-up"></i></span>
+    </div>
+
+
+    <div *ngFor="let item of flightDetail">
+        <div class="bg-white rounded p-3 pb-1 mb-3">
+            <img src={{item.logo}} class="logo"> <span class="location m-1">{{item.flight_name}}</span>
+            <div class="row">
+                <div class="col-5 main">{{item.From_Code}} <span class="location">{{item.From}}</span></div>
+                <div class="col-7 main">{{item.dest_Code}} <span class="location">{{item.destination}}</span></div>
+            </div>
+            <div class="row">
+                <div class="col-1 h5">{{item.dept_time}}</div>
+                <div class="col-4 fw-bold text-center pl-0">{{item.duration}}</div>
+                <div class="col-1 h5">{{item.arrival_time}}</div>
+                <div class="col-4 h5 money">
+                    <span>{{""+item.price |currency: "INR": 'symbol' : '1.0-0'}}</span>
+                    <div class="row main location">
+                        <span>No Cost EMI from <span class="text-dark fw-bold">{{item.emi | currency:"INR": 'symbol' : '1.0-0'}}</span></span>
+                    </div>
+                </div>
+                <div class="col"><button class="rounded w-75 btn">BOOK</button></div>
+            </div>
+            <div class="row p-0">
+                <div class="col-10 refund">Partially Refundable</div>
+                <div class="col-2 flightdetail" type="button">Flight Details <i class="fa fa-chevron-down"></i></div>
+            </div>
+        </div>
+    </div>
+
+</div>

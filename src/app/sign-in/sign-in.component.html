@@ -1,0 +1,39 @@
+                                                        <!-- Login Page  -->
+
+<div class="container-fluid w-25 bg-dark text-light mt-3 p-3 ">
+    <h1 class="text-center">Login</h1>
+
+    <form #SignIn="ngForm" (ngSubmit)="submitForm()" class="form-group mt-4 ">
+        <div class=" mb-3 form-group">
+            <input type="text" required pattern="[a-zA-Z][a-zA-Z ]+" #username="ngModel" name="username" [(ngModel)]="Sign.username"
+             placeholder="Name" class="form-control"
+            [class.is-invalid]="SignIn.submitted && username.invalid">
+            <div *ngIf="SignIn.submitted && username.invalid && username.errors">
+                <small class="text-light" *ngIf="username.errors['required']">username is Required</small>
+                <small class="text-light" *ngIf="username.errors['pattern']">Username is invalid</small>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <input type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$" #password="ngModel"
+            name="password" [(ngModel)]="Sign.password" placeholder="Password" class="form-control"
+            [class.is-invalid]="SignIn.submitted  && password.invalid">
+            <div *ngIf="SignIn.submitted && password.invalid && password.errors">
+                <small class="text-light" *ngIf="password.errors['required']">password is required</small>
+                <small class="text-light" *ngIf="password.errors['pattern']">Password is Invalid</small>
+            </div>
+            <input type="checkbox" class="m-1"><span>Remember Me</span>
+        </div>
+
+
+        <div class="text-center" *ngIf="show">Login Successful! </div>
+        <div class="text-center" *ngIf="display">Credential Incorrect</div>
+        <div class="form-group m-1 mb-2 mt-4 ">
+            <button type="submit" class="form-control rounded bg-success text-white">Login</button>
+        </div>
+        
+    </form>
+
+</div>
