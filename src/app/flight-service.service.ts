@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,6 +7,12 @@ import { Injectable } from '@angular/core';
 export class FlightServiceService {
 
   constructor() { }
+  
+  getUserDetail(){
+    return{"username":"Admin",
+    "password":"Admin@123"}
+  }
+
   getFlightData(){
     return[
       {
@@ -15,11 +22,11 @@ export class FlightServiceService {
         "From_Code":"DEL",
         "destination":"Mumbai, India",
         "dest_Code":"BOM",
-        "dept_time":"17:45",
-        "arrival_time":"20:05",
+        "dept_time":new Date("0000-01-05T17:45"),
+        "arrival_time":new Date("0000-01-05T20:05"),
         "price":6253,
         "emi":2085,
-        "duration":"2h 20m"
+        "duration":new Date("0000-01-05T02:20")
       },{
         "flight_name":"Spicejet",
         "logo":"../../assets/spicejet-logo.png",
@@ -27,11 +34,11 @@ export class FlightServiceService {
         "From_Code":"DEL",
         "destination":"Mumbai, India",
         "dest_Code":"BOM",
-        "dept_time":"18:35",
-        "arrival_time":"20:50",
+        "dept_time":new Date("0000-01-05T08:35"),
+        "arrival_time":new Date("0000-01-05T20:50"),
         "price":7776,
         "emi":2592,
-        "duration":"2h 15m"
+        "duration":new Date("0000-01-05T02:15")
       },{
         "flight_name":"Spicejet",
         "logo":"../../assets/spicejet-logo.png",
@@ -39,11 +46,11 @@ export class FlightServiceService {
         "From_Code":"DEL",
         "destination":"Mumbai, India",
         "dest_Code":"BOM",
-        "dept_time":"19:45",
-        "arrival_time":"22:05",
-        "price":7776,
+        "dept_time":new Date("0000-01-05T19:45"),
+        "arrival_time":new Date("0000-01-05T12:05"),
+        "price":5776,
         "emi":2592,
-        "duration":"2h 20m"
+        "duration":new Date("0000-01-05T01:20")
       }
     ]
   }

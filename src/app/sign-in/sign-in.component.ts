@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { User } from '../user';
+import { FlightServiceService } from '../flight-service.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,7 +11,10 @@ import { User } from '../user';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  userdetails:any ={};
+  constructor(private router:Router,private details:FlightServiceService) {
+    this.userdetails=details.getUserDetail();
+   }
   
   show=false;
   display=false;
@@ -25,10 +30,11 @@ export class SignInComponent implements OnInit {
   }
   submitForm(){
     if(this.SignIn.valid){
-      if(this.Sign.username==="Admin" && this.Sign.password==="Admin@123"){
+      if(this.Sign.username===this.userdetails.username && this.Sign.password===this.userdetails.password){
       console.log(this.SignIn.value);
       this.display=false;
       this.show=true;
+      this.router.navigate(['/Flight_Booking'])
       this.SignIn.resetForm();
       }
       else{

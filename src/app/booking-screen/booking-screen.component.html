@@ -1,4 +1,4 @@
-<div class="container-fluid border">
+<div class="container-fluid">
     <div class="fw-bold">Sort By</div>
     <div class="navbar border rounded h6 bg-white text-uppercase justify-content-around mb-2">
         <span type="button" (click)="sortByDeparture()">Departure</span>
@@ -16,9 +16,9 @@
                 <div class="col-7 main">{{item.dest_Code}} <span class="location">{{item.destination}}</span></div>
             </div>
             <div class="row">
-                <div class="col-1 h5">{{item.dept_time}}</div>
-                <div class="col-4 fw-bold text-center pl-0">{{item.duration}}</div>
-                <div class="col-1 h5">{{item.arrival_time}}</div>
+                <div class="col-1 h5">{{item.dept_time | date:"HH:mm"}}</div>
+                <div class="col-4 fw-bold text-center pl-0">{{item.duration | date:"h'h 'mm'm'"}}</div>
+                <div class="col-1 h5">{{item.arrival_time | date:"HH:mm"}}</div>
                 <div class="col-4 h5 money">
                     <span>{{""+item.price |currency: "INR": 'symbol' : '1.0-0'}}</span>
                     <div class="row main location">
@@ -29,7 +29,7 @@
             </div>
             <div class="row p-0">
                 <div class="col-10 refund">Partially Refundable</div>
-                <div class="col-2 flightdetail" type="button">Flight Details <i class="fa fa-chevron-down"></i></div>
+                <div class="col flightdetail" type="button">Flight Details <i class="fa fa-chevron-down"></i></div>
             </div>
         </div>
     </div>

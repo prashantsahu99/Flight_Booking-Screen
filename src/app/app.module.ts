@@ -15,7 +15,7 @@ import { BookingScreenComponent } from './booking-screen/booking-screen.componen
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
