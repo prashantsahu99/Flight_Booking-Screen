@@ -5,17 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { BookingScreenComponent } from './booking-screen/booking-screen.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BookingPopupComponent } from './booking-popup/booking-popup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
-    BookingScreenComponent
+    BookingScreenComponent,
+    BookingPopupComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

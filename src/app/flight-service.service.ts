@@ -16,6 +16,7 @@ export class FlightServiceService {
   getFlightData(){
     return[
       {
+        "id":"1",
         "flight_name":"Vistara",
         "logo":"../../assets/vistara-logo.png",
         "From":"New Delhi, India",
@@ -28,6 +29,7 @@ export class FlightServiceService {
         "emi":2085,
         "duration":new Date("0000-01-05T02:20")
       },{
+        "id":"2",
         "flight_name":"Spicejet",
         "logo":"../../assets/spicejet-logo.png",
         "From":"New Delhi, India",
@@ -40,6 +42,7 @@ export class FlightServiceService {
         "emi":2592,
         "duration":new Date("0000-01-05T02:15")
       },{
+        "id":"3",
         "flight_name":"Spicejet",
         "logo":"../../assets/spicejet-logo.png",
         "From":"New Delhi, India",

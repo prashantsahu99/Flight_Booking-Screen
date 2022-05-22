@@ -25,7 +25,7 @@
                         <span>No Cost EMI from <span class="text-dark fw-bold">{{item.emi | currency:"INR": 'symbol' : '1.0-0'}}</span></span>
                     </div>
                 </div>
-                <div class="col"><button class="rounded w-75 btn">BOOK</button></div>
+                <div class="col"><button class="rounded w-75 btn" (click)="openDialog(item)">BOOK</button></div>
             </div>
             <div class="row p-0">
                 <div class="col-10 refund">Partially Refundable</div>

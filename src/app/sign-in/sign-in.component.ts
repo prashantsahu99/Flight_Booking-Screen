@@ -34,7 +34,7 @@ export class SignInComponent implements OnInit {
       console.log(this.SignIn.value);
       this.display=false;
       this.show=true;
-      this.router.navigate(['/Flight_Booking'])
+      this.router.navigate(['/Flight_Booking']);
       this.SignIn.resetForm();
       }
       else{

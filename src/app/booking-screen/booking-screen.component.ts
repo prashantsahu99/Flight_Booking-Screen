@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { FlightServiceService } from '../flight-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { BookingPopupComponent } from '../booking-popup/booking-popup.component';
+
 
 @Component({
   selector: 'app-booking-screen',
@@ -8,14 +11,20 @@ import { FlightServiceService } from '../flight-service.service';
 })
 export class BookingScreenComponent implements OnInit {
 
+
+  
   flightDetail:any=[];
 
-  constructor(private details:FlightServiceService ) {
+  constructor(private details:FlightServiceService, private dialog:MatDialog ) {
     this.flightDetail=this.details.getFlightData();
    }
 
-  ngOnInit(): void {new Date("0000-01-05T17:45")
-    
+  
+
+  ngOnInit(): void {}
+
+  openDialog(item:any){
+    this.dialog.open(BookingPopupComponent,{data:item});
   }
 
   sortByDeparture(){

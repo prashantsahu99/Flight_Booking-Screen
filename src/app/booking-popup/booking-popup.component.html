@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <h1 class="text-center">Flight Details</h1>
+    <div class="text-center m-2">
+        <h1 class="bg-dark rounded text-center text-white">{{data.flight_name}}</h1>
+        <img src={{data.logo}} class="rounded">
+    </div>
+    <table class=" table table-bordered h5">
+        
+        <tr>
+            <td>Source</td>
+            <td>{{data.From}} {{data.From_Code}}</td>
+        </tr>
+        <tr>
+            <td>Destination</td>
+            <td>{{data.destination}} {{data.dest_Code}}</td>
+        </tr>
+        <tr>
+            <td>Departure Time</td>
+            <td>{{data.dept_time | date:'HH:mm'}}</td>
+        </tr>
+        <tr>
+            <td>Arrival Time</td>
+            <td>{{data.arrival_time | date:"HH:mm"}}</td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td>{{data.duration | date:"h'h 'mm'm'"}}</td>
+        </tr>
+        <tr>
+            <td>Price (included taxes)</td>
+            <td>{{data.price |currency: "INR": 'symbol' : '1.0-0'}}</td>
+        </tr>
+    </table>
+    <div class="text-center">
+        <button type="button" class="m-3 rounded p-2 h6" (click)="pay()">Pay</button>
+        <button type="button" class="m-3 rounded p-2 h6" mat-button mat-dialog-close>Cancel</button>
+    </div>
+    
+</div>
